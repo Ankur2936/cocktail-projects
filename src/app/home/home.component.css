@@ -1,0 +1,26 @@
+.page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  .card {
+    width: 300px;
+      padding: 20px;
+      margin: 10px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      text-align: center; /* Center the text horizontally */
+  }
+  
+  .logo {
+    position: absolute;
+    left: 20px;
+    top: 20px; /* Optional: adjust the top position as needed */
+    width: 80px; /* Adjust the width of the logo */
+  }
