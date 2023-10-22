@@ -9,7 +9,7 @@ import { CocktailModel } from './cocktail.model';
   styleUrls: ['./cocktail.component.css']
 })
 export class CocktailComponent implements OnInit {
-
+  filter: string = 'all'; // 'all' represents no filter initially
   public cocktailName:string;
   public drinklist:Array<CocktailModel>=[];
 
@@ -32,6 +32,20 @@ navigatetoDetails(data:any){
   this.commanService.setSharedData(data);
   localStorage.removeItem('cocktailData')
   localStorage.setItem('cocktailData', JSON.stringify(data))
+}
+onFilterChange() {
+  if (this.filter === 'Alcoholic') {
+    // Filter alcoholic drinks
+    const data = this.drinklist.filter((data) => data.strAlcoholic === 'Alcoholic');
+    this.drinklist=data?data:[]
+  } else if (this.filter === 'Non-Alcoholic') {
+    // Filter non-alcoholic drinks
+    const data = this.drinklist.filter((data) => data.strAlcoholic === 'Non alcoholic');
+    this.drinklist=data?data:[]
+  }else if (this.filter === 'all') {
+    this.getcocktailDataByName();
+  }
+  
 }
 
 

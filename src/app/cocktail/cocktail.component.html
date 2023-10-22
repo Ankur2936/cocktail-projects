@@ -1,8 +1,18 @@
 
 <div class="page">
+  <div class="filter-options">
+    <label>
+      <input type="radio" name="filter" [(ngModel)]="filter" value="all" (ngModelChange)="onFilterChange()" checked> All
+    </label>
+    <label>
+      <input type="radio" name="filter" [(ngModel)]="filter" value="Alcoholic" (ngModelChange)="onFilterChange()"> Alcoholic
+    </label>
+    <label>
+      <input type="radio" name="filter" [(ngModel)]="filter" value="Non-Alcoholic" (ngModelChange)="onFilterChange()"> Non-Alcoholic
+    </label>
+  </div>
     <div class="card-container" >
       <div class="card"  *ngFor="let  data of drinklist,let i=index;" [routerLink]="['/details']" (click)="navigatetoDetails(data)">
-        <!-- <span [routerLink]="['details']"> -->
         <div class="top-half">
           <img [src]="data.strDrinkThumb" class="fixed-image"
           alt="Image">
@@ -10,32 +20,6 @@
         <div class="bottom-half">
           {{data.strAlcoholic}}
         </div>
-    <!-- </span> -->
     </div>
-      <!-- <div class="card">
-        <div class="top-half">
-          <img src="your-image.jpg" alt="Image">
-        </div>
-        <div class="bottom-half">
-          Card 1
-        </div>
-      </div>
-      <div class="card">
-        <div class="top-half">
-          <img src="your-image.jpg" alt="Image">
-        </div>
-        <div class="bottom-half">
-          Card 1
-        </div>
-      </div>
-      <div class="card">
-        <div class="top-half">
-          <img src="your-image.jpg" alt="Image">
-        </div>
-        <div class="bottom-half">
-          Card 1
-        </div>
-      </div> -->
-      <!-- Add more cards as needed -->
     </div>
   </div>

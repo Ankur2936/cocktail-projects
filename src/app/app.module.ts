@@ -8,6 +8,7 @@ import { CocktailComponent } from './cocktail/cocktail.component';
 import { CommanService } from './comman.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CocktailDetailsComponent } from './cocktail/cocktail-details/cocktail-details.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { CocktailDetailsComponent } from './cocktail/cocktail-details/cocktail-d
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [CommanService],
   bootstrap: [AppComponent]
